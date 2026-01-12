@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joshua Ashton M. Herrera | Portfolio</title>
-  <meta name="description" content="Portfolio of Joshua Ashton M. Herrera — System Analyst / UI/UX Designer, QA/QC, R&D, Technical Writing." />
+  <title>Joshua Ashton Herrera | Portfolio</title>
+  <meta name="description" content="Portfolio of Joshua Ashton Herrera — System Analyst, UI/UX Designer, QA/QC." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Galaxy Background Layers -->
+  <div class="galaxy-bg" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="twinkle"></div>
+    <div class="nebula"></div>
+    <canvas id="particles"></canvas>
+  </div>
+
   <!-- Top Nav -->
   <header class="topbar">
-    <a class="brand" href="#home">
+    <a class="brand" href="#home" aria-label="Go to Home">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">Joshua Ashton M. Herrera</span>
+      <span class="brand-name">Joshua Ashton Herrera's Portfolio</span>
     </a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Primary navigation">
       <a class="nav-link active" href="#home">Home</a>
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#skills">Skills</a>
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#contact">Contact</a>
-      <span class="nav-pill" aria-hidden="true"></span>
+
+      <!-- hover highlight only -->
+      <span class="nav-orb nav-orb--hover" aria-hidden="true"></span>
     </nav>
   </header>
 
@@ -31,7 +41,7 @@
     <!-- ================= HOME ================= -->
     <section class="section hero" id="home">
       <div class="container hero-grid">
-        <!-- Left -->
+
         <div class="hero-left reveal" data-reveal>
           <div class="chip">
             <span class="dot"></span>
@@ -39,13 +49,13 @@
           </div>
 
           <h1 class="hero-title">
-            Quality Assurance<br />
+            System Analyst<br />
             <span class="muted">UI/UX Designer</span>
           </h1>
 
           <p class="hero-sub">
-            I design and build clean, modern systems — combining analysis, UI/UX, QA/QC, R&amp;D,
-            and technical writing to make products reliable and easy to use.
+            I design and build clean, modern systems — combining analysis, UI/UX, QA/QC, and technical writing
+            to make products reliable and easy to use.
           </p>
 
           <div class="hero-cta">
@@ -58,30 +68,50 @@
             </a>
           </div>
 
+          <!-- Find me on: Gmail / SMS / LinkedIn -->
           <div class="socials">
             <p class="socials-label">Find me on:</p>
             <div class="socials-row">
-              <a class="social" href="#" aria-label="Portfolio"><span aria-hidden="true">⌁</span></a>
-              <a class="social" href="#" aria-label="GitHub"><span aria-hidden="true">⌂</span></a>
-              <a class="social green" href="#" aria-label="LinkedIn"><span aria-hidden="true">in</span></a>
+
+              <!-- Gmail -->
+              <a class="social gmail"
+                 href="mailto:joshua.herrera.359@gmail.com"
+                 aria-label="Send me an email (Gmail)">
+                ✉
+              </a>
+
+              <!-- SMS -->
+              <a class="social phone"
+                 href="sms:+639622070804"
+                 aria-label="Send me an SMS">
+                ☎
+              </a>
+
+              <!-- LinkedIn -->
+              <a class="social linkedin"
+                 href="https://www.linkedin.com/in/jamherrera/"
+                 target="_blank" rel="noopener"
+                 aria-label="Open my LinkedIn profile">
+                in
+              </a>
+
             </div>
           </div>
         </div>
 
-        <!-- Right -->
         <div class="hero-right reveal" data-reveal>
           <div class="accent-swoosh" aria-hidden="true"></div>
 
           <div class="photo-card float">
             <div class="photo-frame">
-              <img src="assets/Joshua%20-%202X2.jpg" alt="Photo of Joshua" />
+              <!-- NOTE: your file is in the same folder as index.html -->
+              <img src="assets/Joshua - 2X2.jpg" alt="Photo of Joshua"
+                   onerror="this.style.display='none';" />
             </div>
-
             <div class="scribble" aria-hidden="true"></div>
             <div class="corner-line" aria-hidden="true"></div>
           </div>
 
-          <!-- Scroll to next section -->
           <a class="scroll-badge" href="#about" aria-label="Scroll down">
             <span class="badge-ring"></span>
             <span class="badge-arrow">↓</span>
@@ -89,7 +119,6 @@
         </div>
       </div>
 
-      <!-- HERO FOOTER (Pinned Ribbon) -->
       <footer class="hero-footer">
         <div class="ribbon ribbon--footer">
           <div class="ribbon-track">
@@ -97,14 +126,14 @@
             <span>System Analysis</span><span class="spark">✦</span>
             <span>QA/QC</span><span class="spark">✦</span>
             <span>Technical Writing</span><span class="spark">✦</span>
-            <span>R&amp;D</span><span class="spark">✦</span>
+            <span>Networking</span><span class="spark">✦</span>
             <span>Web Design</span><span class="spark">✦</span>
 
             <span>UI/UX</span><span class="spark">✦</span>
             <span>System Analysis</span><span class="spark">✦</span>
             <span>QA/QC</span><span class="spark">✦</span>
             <span>Technical Writing</span><span class="spark">✦</span>
-            <span>R&amp;D</span><span class="spark">✦</span>
+            <span>Networking</span><span class="spark">✦</span>
             <span>Web Design</span><span class="spark">✦</span>
           </div>
         </div>
@@ -118,7 +147,7 @@
           <p class="kicker">ABOUT</p>
           <h2>Design + analysis that stays practical.</h2>
           <p class="lead">
-            I turn messy requirements into clear flows, usable interfaces, and reliable systems —
+            I turn requirements into clear workflows, clean interfaces, and reliable systems —
             then document and test them so they ship smoothly.
           </p>
         </div>
@@ -126,40 +155,58 @@
         <div class="cards">
           <article class="card reveal" data-reveal>
             <h3>What I do</h3>
-            <p>System analysis, UI/UX, QA/QC, documentation, prototypes, and process improvements.</p>
+            <p>System analysis, UI/UX, QA/QC, documentation, and prototypes.</p>
           </article>
           <article class="card reveal" data-reveal>
             <h3>How I work</h3>
-            <p>Research → wireframes → UI → build/test → iterate. Always clean, always user-first.</p>
+            <p>Research → wireframes → UI → test → iterate. Always user-first.</p>
           </article>
           <article class="card reveal" data-reveal>
             <h3>What I value</h3>
-            <p>Clarity, speed, maintainability, and shipping work that feels “easy” to use.</p>
+            <p>Clarity, maintainability, and shipping work that feels easy to use.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= SERVICES ================= -->
-    <section class="section alt" id="services">
+    <!-- ================= SKILLS ================= -->
+    <section class="section alt" id="skills">
       <div class="container">
         <div class="section-head reveal" data-reveal>
-          <p class="kicker">SERVICES</p>
-          <h2>What I can help you build.</h2>
+          <p class="kicker">SKILLS</p>
+          <h2>Tools and fundamentals I use.</h2>
+          <p class="lead">Basic knowledge and skills I apply in building systems and websites.</p>
         </div>
 
-        <div class="cards">
-          <article class="card reveal" data-reveal>
-            <h3>System Analysis</h3>
-            <p>Requirements, process mapping, functional specs, and solution design.</p>
+        <div class="skills-grid">
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-top"><span class="skill-dot"></span><h3>HTML</h3></div>
+            <p>Basic knowledge in structuring web pages using semantic elements and clean markup.</p>
           </article>
-          <article class="card reveal" data-reveal>
-            <h3>UI/UX Design</h3>
-            <p>Wireframes, prototypes, design systems, and usability-focused layouts.</p>
+
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-top"><span class="skill-dot"></span><h3>CSS</h3></div>
+            <p>Basic knowledge in responsive layout (Flex/Grid), styling, and simple animations.</p>
           </article>
-          <article class="card reveal" data-reveal>
-            <h3>QA/QC</h3>
-            <p>Test plans, manual testing, bug reports, and regression checks.</p>
+
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-top"><span class="skill-dot"></span><h3>MySQL</h3></div>
+            <p>Basic knowledge in tables, relationships, and CRUD queries for data-driven systems.</p>
+          </article>
+
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-top"><span class="skill-dot"></span><h3>System Administration</h3></div>
+            <p>Basic knowledge in system setup, troubleshooting, user management, and maintenance.</p>
+          </article>
+
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-top"><span class="skill-dot"></span><h3>Networking</h3></div>
+            <p>Basic knowledge in IP addressing, LAN concepts, and connectivity troubleshooting.</p>
+          </article>
+
+          <article class="skill-card reveal" data-reveal>
+            <div class="skill-top"><span class="skill-dot"></span><h3>Quality Assurance</h3></div>
+            <p>Basic knowledge in manual testing, test cases, bug reporting, and regression checking.</p>
           </article>
         </div>
       </div>
@@ -171,29 +218,48 @@
         <div class="section-head reveal" data-reveal>
           <p class="kicker">PROJECTS</p>
           <h2>Selected work.</h2>
-          <p class="lead">Click any card to open details (placeholder behavior).</p>
         </div>
 
         <div class="projects">
-          <a class="project reveal" data-reveal href="#" onclick="openProject('GameSchedGO (GSG)')">
-            <div class="project-thumb"></div>
+          <!-- GameSchedGO -->
+          <a class="project reveal" data-reveal href="#"
+             data-title="GameSchedGO (GSG)"
+             data-desc="Sports management system concept for city government workflows."
+             data-url="https://gameschedgo.com"
+             onclick="return openProjectModal(event)">
+            <div class="project-thumb">
+              <img src="assets/gameschedgo.png" alt="GameSchedGo preview"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+            </div>
+
             <div class="project-body">
               <h3>GameSchedGO (GSG)</h3>
               <p>Sports management system concept for city government workflows.</p>
+
               <div class="tags">
                 <span class="tag">Web app</span>
                 <span class="tag">Paperless</span>
-                <span class="tag">Information System</span>
+                <span class="tag">Reservation System</span>
                 <span class="tag">City Government</span>
               </div>
             </div>
           </a>
 
-          <a class="project reveal" data-reveal href="#" onclick="openProject('Property Tax Management')">
-            <div class="project-thumb alt"></div>
+          <!-- Property Tax -->
+          <a class="project reveal" data-reveal href="#"
+             data-title="Property Tax Management"
+             data-desc="Cleaner records, easier tracking, and clearer reporting for local government workflows."
+             data-url="#"
+             onclick="return openProjectModal(event)">
+            <div class="project-thumb alt">
+              <img src="assets/amilyar.png" alt="Property tax preview"
+                   onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+            </div>
+
             <div class="project-body">
               <h3>Property Tax Management</h3>
-              <p>Cleaner records, easier tracking, and clearer reporting for local government.</p>
+              <p>Cleaner records, easier tracking, and clearer reporting for local government workflows.</p>
+
               <div class="tags">
                 <span class="tag">System</span>
                 <span class="tag">Tracking</span>
@@ -211,31 +277,53 @@
       <div class="container">
         <div class="section-head reveal" data-reveal>
           <p class="kicker">CONTACT</p>
-          <h2>Let’s work together.</h2>
-          <p class="lead">Send me a message and I’ll reply as soon as I can.</p>
+          <h2>Let’s connect.</h2>
+          <p class="lead">You can reach me through email, phone, or LinkedIn.</p>
         </div>
 
-        <form class="contact reveal" data-reveal onsubmit="return fakeSend(event)">
-          <div class="field">
-            <label>Name</label>
-            <input required type="text" placeholder="Your name" />
+        <div class="contact-info reveal" data-reveal>
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:joshua.herrera.359@gmail.com">joshua.herrera.359@gmail.com</a>
           </div>
-          <div class="field">
-            <label>Email</label>
-            <input required type="email" placeholder="you@email.com" />
+
+          <div class="contact-item">
+            <span class="contact-label">Phone</span>
+            <a href="tel:+639622070804">+63 962 207 0804</a>
           </div>
-          <div class="field full">
-            <label>Message</label>
-            <textarea required rows="5" placeholder="Write your message..."></textarea>
+
+          <div class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/jamherrera/" target="_blank" rel="noopener">
+              linkedin.com/in/jamherrera
+            </a>
           </div>
-          <button class="btn primary" type="submit">
-            Send Message <span class="icon" aria-hidden="true">↗</span>
-          </button>
-          <p class="form-note" id="formNote" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- ================= PROJECT MODAL ================= -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeProjectModal()" aria-hidden="true"></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" onclick="closeProjectModal()" aria-label="Close modal">✕</button>
+
+      <div class="modal-head">
+        <p class="modal-kicker">PROJECT</p>
+        <h3 class="modal-title" id="modalTitle">Title</h3>
+        <p class="modal-desc" id="modalDesc">Description</p>
+      </div>
+
+      <div class="modal-actions">
+        <a class="btn primary" id="modalVisit" href="#" target="_blank" rel="noopener">
+          View Website <span class="icon" aria-hidden="true">↗</span>
+        </a>
+        <button class="btn ghost" type="button" onclick="closeProjectModal()">Close</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
